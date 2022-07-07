@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function buttonKlik(){
+            var leeftijdVak = document.getElementById("leeftijd");
+            var leeftijd = leeftijdVak.value;
+            var naamVak = document.getElementById("naam");
+            var naam = naamVak.value;
+            var laatsteLetter = naam[naam.length - 1];
+
+            if(leeftijd<16){
+                leeftijdVak.style.backgroundColor = "red";
+            }else if(leeftijd==16 || leeftijd==17){
+                leeftijdVak.style.backgroundColor = "yellow";
+            }else{                
+                leeftijdVak.style.backgroundColor = "green";
+            }
+
+            if(laatsteLetter=="q"){
+                naamVak.style.backgroundColor = "red";
+            }else{
+                naamVak.style.backgroundColor = "green";
+            }
+
+            document.getElementById("denaamspan").innerHTML = leeftijd;
+
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="naam">
+    <input type="text" id="leeftijd">
+    <input type="button" value="Klik hier" onclick="buttonKlik()">
+    <h1> Welkom: <span id="denaamspan"></span> </h1>
+</body>
+</html>

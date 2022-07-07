@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var antwoord;
+
+        function buttonKlik(){
+            startRound();
+        }
+
+        function startRound(){
+            var returnString = "";
+            antwoord = document.getElementById("woordvak").value;
+
+            for (var i = 0; i < antwoord.length; i++){
+                returnString += "_ ";
+            }
+
+            document.getElementById("denaamspan").innerHTML = returnString;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="woordvak">
+    <input type="button" value="Klik hier" onclick="buttonKlik()">
+    <h1> Welkom: <span id="denaamspan"></span> </h1>
+</body>
+</html>
